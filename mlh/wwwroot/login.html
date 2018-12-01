@@ -10,8 +10,9 @@
 <body>  
     <script type="text/javascript">
 				function redirect(json){
+					console.log(json)
 					var encodeJson = btoa(JSON.stringify(json))
-					window.location(window.location.href.replace(/login/, encodeJson))
+					window.location.replace(window.location.href.replace(/login.html/, 'tutor.html?' + encodeJson))
 				}
 
         function login(){
@@ -24,7 +25,7 @@
 
                 var json = JSON.parse(xhr.responseText);
                 console.log(json)
-								postRequestCallback("gettutors", "", redirect)
+								typeRequestCallback("GET","gettutors", "", redirect)
             }
             };
             var user = document.getElementById('UserForm').value

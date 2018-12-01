@@ -1,7 +1,7 @@
-function postRequestCallback(path, args, callback){
+function typeRequestCallback(type, path, args, callback){
 	var xhr = new XMLHttpRequest();
 	var url = path;
-	xhr.open("POST", url , true);
+	xhr.open(type, url , true);
 	xhr.setRequestHeader("Content-type", "application/json")
 	xhr.onreadystatechange = function () {
 	if (xhr.readyState === 4 && xhr.status === 200) {
