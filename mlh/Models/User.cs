@@ -59,6 +59,14 @@ namespace mlh.Models
                 tutees = tute
             };
         }
+        public object getservices(){
+            List<string> ser = new List<string>();
+            if (!string.IsNullOrEmpty(services))
+            {
+                ser = JsonConvert.DeserializeObject<List<string>>(services);
+            }
+            return ser;
+        }
         public void addservice(string courseid){
             List<string> ser = new List<string>();
             if (!string.IsNullOrEmpty(services))
@@ -106,6 +114,14 @@ namespace mlh.Models
             }
             tut.Remove(tut.Where(x => x.Key == userid && x.Value == courseid).FirstOrDefault());
             tutors = JsonConvert.SerializeObject(tut);
+        }
+        public List<KeyValuePair<Guid, Guid>> gettutees(){
+            List<KeyValuePair<Guid, Guid>> tute = new List<KeyValuePair<Guid, Guid>>();
+            if (!string.IsNullOrEmpty(tutees))
+            {
+                tute = JsonConvert.DeserializeObject<List<KeyValuePair<Guid, Guid>>>(tutees);
+            }
+            return tute;
         }
     }
 }
