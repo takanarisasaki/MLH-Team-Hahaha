@@ -19,15 +19,23 @@ namespace mlh.Models
         [Required]
         public Guid courseid { get; set; }
     }
-
+    public class gettutors
+    {
+        [Required]
+        public Guid courseid { get; set; }
+    }
     public class RequestTutor:CreateUser{
         public string tutorid { get; set; }
     }
     public class addcourse{
+        [Required]
         public string name { get; set; }
+        [Required]
         public string description { get; set; }
     }
-
+    public class addservice:CreateUser{
+        public Guid courseid { get; set; }
+    }
     public class UserPreview{
         public Guid id { get; set; }
         public string username { get; set; }

@@ -59,6 +59,15 @@ namespace mlh.Models
                 tutees = tute
             };
         }
+        public void addservice(string courseid){
+            List<string> ser = new List<string>();
+            if (!string.IsNullOrEmpty(services))
+            {
+                ser = JsonConvert.DeserializeObject<List<string>>(services);
+            }
+            ser.Add(courseid);
+        }
+
         public void addtutor(string userid,string courseid){
             List<KeyValuePair<string, string>> tut=new List<KeyValuePair<string, string>>();
             if (!string.IsNullOrEmpty(tutors))
