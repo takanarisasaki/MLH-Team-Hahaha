@@ -76,6 +76,7 @@ namespace mlh.Controllers
                 return BadRequest();
             }
             var user = await validate(data.username, data.password);
+            return null;
         }
 
 
