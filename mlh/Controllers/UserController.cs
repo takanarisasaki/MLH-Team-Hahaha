@@ -69,6 +69,18 @@ namespace mlh.Controllers
             await context.SaveChangesAsync();
             return user.getpreview();
         }
+
+        public async Task<object> addcourse([FromBody]addservice data){
+            if (!ModelState.IsValid)
+            {
+                return BadRequest();
+            }
+            var user = await validate(data.username, data.password);
+        }
+
+
+
+
         [HttpPost,Route("updateavailability")]
         public async Task<object> updateavailability([FromBody]availability data){
             if (!ModelState.IsValid)
@@ -86,6 +98,7 @@ namespace mlh.Controllers
             return user.getpreview();
         }
 
+        
 
         public async Task<User> validate(string username,string password){
             return (await context.users.Where(x => x.username == username && x.password == password).ToListAsync()).FirstOrDefault();
