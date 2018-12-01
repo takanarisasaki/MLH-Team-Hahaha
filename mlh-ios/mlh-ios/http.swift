@@ -11,27 +11,33 @@ import Foundation
 
 class HTTP{
     
-    public static func post(addr:String,data:Any) -> Void {
-        let url = URL(string: addr)!
-        var request = URLRequest(url: url)
-        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
-        request.httpMethod = "POST"
-        let postString = "id=13&name=Jack"
-        request.httpBody = postString.data(using: .utf8)
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            guard let data = data, error == nil else {                                                 // check for fundamental networking error
-                print("error=\(error)")
-                return
+    public static func post(addr:String,data:[String:Any]) -> Void {
+        
+        
+        do {
+            let url = URL(string: "https://mlh-team-hahaha.azurewebsites.net/\(addr)")
+            let session = URLSession.shared
+            
+            var request = NSMutableURLRequest(url: url as! URL)
+            request.httpMethod = "POST"
+            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+            request.httpBody = try JSONSerialization.data(withJSONObject: data, options: .prettyPrinted)
+            
+            let task = URLSession.shared.dataTask(with: request) { data, response, error in
+                guard let data = data, error == nil else {
+                    print(error?.localizedDescription ?? "No data")
+                    return
+                }
+                let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
+                if let responseJSON = responseJSON as? [String: Any] {
+                    print(responseJSON)
+                }
             }
             
-            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
-                print("statusCode should be 200, but is \(httpStatus.statusCode)")
-                print("response = \(response)")
-            }
-            
-            let responseString = String(data: data, encoding: .utf8)
-            print("responseString = \(responseString)")
+            task.resume()
+        } catch  {
+            print("failed")
         }
-        task.resume()
+        
     }
 }
