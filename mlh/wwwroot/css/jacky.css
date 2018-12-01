@@ -3,3 +3,59 @@
     margin: 0 auto;
     background-color: blue;
 }
+.h1 {
+    font-family: "Roboto", sans-serif;
+
+}
+.form-group {
+    position: relative;
+    z-index: 1;
+    background: #FFFFFF;
+    max-width: 360px;
+    margin: 0 auto 45px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.form-group input {
+    font-family: "Roboto", sans-serif;
+    outline: 0;
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+.container {
+    width: 360px;
+    padding: 13% 0 0;
+    margin: auto;
+}
+.submit {
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    outline: 0;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    box-sizing: border-box;
+    position: relative;
+    font-size: 14px;
+
+}
+.btn.btn-primary {
+    font-size: 25px;
+    position: absolute;
+    top: 10px;
+    left: 35%;
+}
+body, html {
+    height: 100%;
+    margin: 0;
+    background-image: url("https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/B3WtMhFxMjaid4bfm/videoblocks-white-low-poly-background_hadtdz4-m_thumbnail-full01.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
