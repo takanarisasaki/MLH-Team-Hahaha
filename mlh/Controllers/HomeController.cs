@@ -5,39 +5,25 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using mlh.Models;
+using System.ComponentModel.DataAnnotations;
+using Microsoft.EntityFrameworkCore;
 
 namespace mlh.Controllers
 {
+    [Route("manager")]
     public class HomeController : Controller
     {
-        public IActionResult Index()
-        {
-            return View();
+        db context = new db();
+        [HttpGet,Route("getusers")]
+        public async Task<object> getusers(){
+            var users = await context.users.ToListAsync();
+            return users;
         }
 
-        public IActionResult About()
+        [HttpGet, Route("getcourses")]
+        public async Task<object> getcourses()
         {
-            ViewData["Message"] = "Your application description page.";
-
-            return View();
-        }
-
-        public IActionResult Contact()
-        {
-            ViewData["Message"] = "Your contact page.";
-
-            return View();
-        }
-
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return await context.courses.ToListAsync();
         }
     }
 }
