@@ -11,7 +11,6 @@ import Foundation
 
 class HTTP{
     
-    
     public static func post(addr:String,data:Any) -> Void {
         let url = URL(string: addr)!
         var request = URLRequest(url: url)
