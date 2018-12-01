@@ -70,6 +70,7 @@ namespace mlh.Controllers
             return user.getpreview();
         }
 
+        [HttpPost,Route("addservice")]
         public async Task<object> addcourse([FromBody]addservice data){
             if (!ModelState.IsValid)
             {
@@ -86,9 +87,6 @@ namespace mlh.Controllers
             await context.SaveChangesAsync();
             return user.getpreview();
         }
-
-
-
 
         [HttpPost,Route("updateavailability")]
         public async Task<object> updateavailability([FromBody]availability data){
@@ -107,8 +105,31 @@ namespace mlh.Controllers
             return user.getpreview();
         }
 
-        
-
+        [HttpPost,Route("gettutees")]
+        public async Task<object> gettutees([FromBody]CreateUser data){
+            if (!ModelState.IsValid)
+            {
+                return BadRequest();
+            }
+            var user = await validate(data.username, data.password);
+            return user.gettutees();
+        }
+        [HttpPost,Route("gettutorinfo/{id}")]
+        public async Task<object> gettutorinfo(string id){
+            Guid guid = Guid.Parse(id);
+            var tutor = await context.users.FindAsync(guid);
+            if (tutor==null)
+            {
+                return NotFound();
+            }
+            return new
+            {
+                id = tutor.username,
+                phone = tutor.phone,
+                email = tutor.email,
+                services = tutor.getservices()
+            };
+        }
         public async Task<User> validate(string username,string password){
             return (await context.users.Where(x => x.username == username && x.password == password).ToListAsync()).FirstOrDefault();
         }
