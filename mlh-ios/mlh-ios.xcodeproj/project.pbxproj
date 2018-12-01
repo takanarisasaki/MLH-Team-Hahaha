@@ -15,6 +15,9 @@
 		0CA840B721B2F1F600C87541 /* mlh_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA840B621B2F1F600C87541 /* mlh_iosTests.swift */; };
 		0CA840C221B2F1F600C87541 /* mlh_iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA840C121B2F1F600C87541 /* mlh_iosUITests.swift */; };
 		0CA840D021B2F23300C87541 /* http.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA840CF21B2F23300C87541 /* http.swift */; };
+		0CA840D221B3239D00C87541 /* MP900439527.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0CA840D121B3239D00C87541 /* MP900439527.jpg */; };
+		0CA840D521B32C0000C87541 /* globaldata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA840D421B32C0000C87541 /* globaldata.swift */; };
+		0CA840D721B32E4C00C87541 /* PersonalPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA840D621B32E4C00C87541 /* PersonalPageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		0CA840C121B2F1F600C87541 /* mlh_iosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mlh_iosUITests.swift; sourceTree = "<group>"; };
 		0CA840C321B2F1F600C87541 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0CA840CF21B2F23300C87541 /* http.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = http.swift; sourceTree = "<group>"; };
+		0CA840D121B3239D00C87541 /* MP900439527.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MP900439527.jpg; sourceTree = "<group>"; };
+		0CA840D421B32C0000C87541 /* globaldata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = globaldata.swift; sourceTree = "<group>"; };
+		0CA840D621B32E4C00C87541 /* PersonalPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalPageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +105,7 @@
 		0CA840A021B2F1F400C87541 /* mlh-ios */ = {
 			isa = PBXGroup;
 			children = (
+				0CA840D321B323A300C87541 /* assets */,
 				0CA840A121B2F1F400C87541 /* AppDelegate.swift */,
 				0CA840A321B2F1F400C87541 /* ViewController.swift */,
 				0CA840A521B2F1F400C87541 /* Main.storyboard */,
@@ -106,6 +113,8 @@
 				0CA840AA21B2F1F600C87541 /* LaunchScreen.storyboard */,
 				0CA840AD21B2F1F600C87541 /* Info.plist */,
 				0CA840CF21B2F23300C87541 /* http.swift */,
+				0CA840D421B32C0000C87541 /* globaldata.swift */,
+				0CA840D621B32E4C00C87541 /* PersonalPageViewController.swift */,
 			);
 			path = "mlh-ios";
 			sourceTree = "<group>";
@@ -126,6 +135,14 @@
 				0CA840C321B2F1F600C87541 /* Info.plist */,
 			);
 			path = "mlh-iosUITests";
+			sourceTree = "<group>";
+		};
+		0CA840D321B323A300C87541 /* assets */ = {
+			isa = PBXGroup;
+			children = (
+				0CA840D121B3239D00C87541 /* MP900439527.jpg */,
+			);
+			path = assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,6 +251,7 @@
 			files = (
 				0CA840AC21B2F1F600C87541 /* LaunchScreen.storyboard in Resources */,
 				0CA840A921B2F1F600C87541 /* Assets.xcassets in Resources */,
+				0CA840D221B3239D00C87541 /* MP900439527.jpg in Resources */,
 				0CA840A721B2F1F400C87541 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -261,7 +279,9 @@
 			files = (
 				0CA840A421B2F1F400C87541 /* ViewController.swift in Sources */,
 				0CA840A221B2F1F400C87541 /* AppDelegate.swift in Sources */,
+				0CA840D521B32C0000C87541 /* globaldata.swift in Sources */,
 				0CA840D021B2F23300C87541 /* http.swift in Sources */,
+				0CA840D721B32E4C00C87541 /* PersonalPageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
