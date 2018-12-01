@@ -28,7 +28,7 @@ tarballs/
 test-results/
 Thumbs.db
 .vs/
-
+Startup.cs
 # Mac bundle stuff
 *.dmg
 *.app
