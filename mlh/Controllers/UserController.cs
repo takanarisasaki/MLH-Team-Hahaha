@@ -91,6 +91,9 @@ namespace mlh.Controllers
                 phone = "514539219",
                 email = "BRIANLI@gmail.com"
             });
+            
+            context.users.AddRange(usrs);
+            await context.SaveChangesAsync();
             usrs[0].addservice(l[4].id.ToString());
             usrs[0].addservice(l[1].id.ToString());
             usrs[1].addservice(l[2].id.ToString());
@@ -101,7 +104,10 @@ namespace mlh.Controllers
             usrs[3].addservice(l[3].id.ToString());
             usrs[3].addservice(l[1].id.ToString());
             usrs[3].addservice(l[4].id.ToString());
-            context.users.AddRange(usrs);
+            for (int i = 0; i < usrs.Count; i++)
+            {
+                context.Entry(usrs[i]).State = EntityState.Modified;
+            }
             await context.SaveChangesAsync();
             return "success";
         }

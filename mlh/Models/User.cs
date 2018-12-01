@@ -81,6 +81,7 @@ namespace mlh.Models
                 ser = JsonConvert.DeserializeObject<List<string>>(services);
             }
             ser.Add(courseid);
+            this.services = JsonConvert.SerializeObject(ser);
         }
 
         public void addtutor(string userid,string courseid){
@@ -120,7 +121,7 @@ namespace mlh.Models
                 tut = JsonConvert.DeserializeObject<List<KeyValuePair<string, string>>>(tutors);
             }
             tut.Remove(tut.Where(x => x.Key == userid && x.Value == courseid).FirstOrDefault());
-            tutors = JsonConvert.SerializeObject(tut);
+            tutees = JsonConvert.SerializeObject(tut);
         }
         public List<KeyValuePair<Guid, Guid>> gettutees(){
             List<KeyValuePair<Guid, Guid>> tute = new List<KeyValuePair<Guid, Guid>>();
