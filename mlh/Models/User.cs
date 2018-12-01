@@ -65,6 +65,7 @@ namespace mlh.Models
             {
                 ser = JsonConvert.DeserializeObject<List<string>>(services);
             }
+            ser.Add(courseid);
         }
 
         public void addtutor(string userid,string courseid){

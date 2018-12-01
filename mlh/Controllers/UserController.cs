@@ -76,7 +76,15 @@ namespace mlh.Controllers
                 return BadRequest();
             }
             var user = await validate(data.username, data.password);
-            return null;
+            var course = await context.courses.FindAsync(data.courseid);
+            if (course==null)
+            {
+                return NotFound();
+            }
+            user.addservice(data.courseid.ToString());
+            context.Entry(user).State = EntityState.Modified;
+            await context.SaveChangesAsync();
+            return user.getpreview();
         }
 
 
