@@ -38,7 +38,7 @@ h2 {
 }
 
 /* ------------------------------------------ */
-/* HEADER */
+/* CONTENT */
 /* ------------------------------------------ */
 header {
     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../images/carousel.jpg');
@@ -89,20 +89,41 @@ header {
 /* Section - About */
 
 .aboutContainer {
-    margin-top: 40px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding-top: 25px;
     text-align: center;
 }
 
-.aboutTextBox {
-    margin: 0px 50px;
+.aboutTextBox h2 {
+    padding-bottom: 17px;
 }
 
-/* Section - Title */
+.aboutTextBox p {
+    margin-top: 8px;
+}
 
+
+/* Section - Title */
 .tutorContainer {
     margin-top: 50px;
+    padding-top: 25px;
 }
 
 .tutorTitle {
     text-align: center;
+}
+
+
+/* Section - Tutors */
+
+.tutors {
+    margin: 40px 70px;
+    align-content: center;
+}
+
+.tutor {
+    display: inline-block;
+    margin-left: 80px;
+    margin-bottom: 80px;
 }
