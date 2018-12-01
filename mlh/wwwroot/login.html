@@ -5,9 +5,15 @@
     <title>Login Page</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link href="css/jacky.css" rel="stylesheet" />
+		<script src="js/actions.js"></script>
 </head>
 <body>  
     <script type="text/javascript">
+				function redirect(json){
+					var encodeJson = btoa(JSON.stringify(json))
+					window.location(window.location.href.replace(/login/, encodeJson))
+				}
+
         function login(){
             var xhr = new XMLHttpRequest();
             var url = "users/login";
@@ -18,14 +24,15 @@
 
                 var json = JSON.parse(xhr.responseText);
                 console.log(json)
+								postRequestCallback("gettutors", "", redirect)
             }
             };
             var user = document.getElementById('UserForm').value
             var pass = document.getElementById('PassForm').value
             var data = JSON.stringify({"username": user, "password": pass});
             xhr.send(data);
-						window.location.replace(window.location.href.replace(/login/g, 'tutor'))
         }
+				
     </script>
     <div class="container">
         <form class="center" method="post">
@@ -36,7 +43,6 @@
                 <input id="UserForm" type="text" class="form-control" placeholder="Username" />
 
                 <input id="PassForm" type="password" class="form-control" placeholder="Password" />
-
             </div>
 
         </form>
