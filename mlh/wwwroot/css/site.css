@@ -160,6 +160,25 @@ header {
 
 /* Section - Contact */
 
+.tutorName {
+    text-align: center;
+    margin-top: 5px;
+    font-size: 24px;
+}
+
+.tutorDescription {
+    margin-top: 10px;
+}
+
+.tutorPrice {
+    text-align: right;
+    color: blue;
+}
+
+
+
+
+/* Section - Contact */
 
 .contactContainer {
     background-color: black;
@@ -189,9 +208,8 @@ input, textarea {
     font-size: 15px;
     color: white;
 }
-::placeholder {
-    color: grey;
-}
+
+
 .btn {
     font-size: 25px;
     position: relative;
@@ -206,14 +224,4 @@ input, textarea {
 .btn:hover{
     background-color:dodgerblue;
     cursor:pointer;
-}
-
-.clearfix {
-    overflow: auto;
-}
-
-.clearfix::after {
-    content: "";
-    clear: both;
-    display: table;
 }
