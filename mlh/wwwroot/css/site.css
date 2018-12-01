@@ -127,3 +127,18 @@ header {
     margin-left: 80px;
     margin-bottom: 80px;
 }
+
+.tutorName {
+    text-align: center;
+    margin-top: 5px;
+    font-size: 24px;
+}
+
+.tutorDescription {
+    margin-top: 10px;
+}
+
+.tutorPrice {
+    text-align: right;
+    color: blue;
+}
