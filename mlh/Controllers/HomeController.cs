@@ -13,6 +13,7 @@ namespace mlh.Controllers
     [Route("manager")]
     public class HomeController : Controller
     {
+        //admin area
         db context = new db();
         [HttpGet,Route("getusers")]
         public async Task<object> getusers(){
