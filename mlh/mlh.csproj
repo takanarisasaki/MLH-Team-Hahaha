@@ -8,4 +8,8 @@
     <PackageReference Include="Microsoft.AspNetCore.App" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Remove="Models\mlh.cs" />
+    <Compile Remove="Controllers\ValuesController.cs" />
+  </ItemGroup>
 </Project>
