@@ -4,10 +4,6 @@
     <meta charset="utf-8" />
     <title></title>
     <link rel="stylesheet" type="text/css" href="css/site.css" />
-
-    <script>
-
-    </script>
 </head>
 <body>
     <header>
@@ -28,7 +24,7 @@
     </header>
     <section class="aboutContainer" id="about">
         <div class="aboutTextBox">
-            <h2>About</h2>
+            <h2 class="aboutTitle">About</h2>
             <p>We provide services for tutors and students.
             <p>Tutors help in courses they are expert in, and students find tutors who can help them.</p>
             <p>See below to see our very best tutors!</p>
@@ -40,41 +36,91 @@
         </div>
         <div class="tutors" id="contactUs">
             <div class="tutor">
-                <img src="images/tutor1.jpeg" width="400" height="400"/>
-                <p>Name LastName</p>
-                <p>Description</p>
-                <p>Price</p>
-                <p>Rating</p>
+                <img src="images/tutor1.jpeg" width="400" height="400" />
+                <div class="tutorName"><p id="tutor_1_name"></p></div>
+                <div class="tutorDescription"><p id="tutor_1_description"></p></div>
+                <div class="tutorPrice"><p id="tutor_1_price"></p></div>
+                <div class="tutorRating"><p id="tutor_1_rating"></p></div>
+                <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+
             </div>
 
             <div class="tutor">
                 <img src="images/tutor2.jpeg" width="400" height="400" />
-                <p>Name LastName</p>
-                <p>Description</p>
-                <p>Price</p>
-                <p>Rating</p>
+                <div class="tutorName"><p id="tutor_2_name"></p></div>
+                <div class="tutorDescription"><p id="tutor_2_description"></p></div>
+                <div class="tutorPrice"><p id="tutor_2_price"></p></div>
+                <div class="tutorRating"><p id="tutor_2_rating"></p></div>
+                <button type="submit" class="btn1">Submit</button>
+
             </div>
 
             <div class="tutor">
                 <img src="images/tutor3.jpeg" width="400" height="400" />
-                <p>Name LastName</p>
-                <p>Description</p>
-                <p>Price</p>
-                <p>Rating</p>
+                <div class="tutorName"><p id="tutor_3_name"></p></div>
+                <div class="tutorDescription"><p id="tutor_3_description"></p></div>
+                <div class="tutorPrice"><p id="tutor_3_price"></p></div>
+                <div class="tutorRating"><p id="tutor_3_rating"></p></div>
             </div>
 
             <div class="tutor">
                 <img src="images/tutor4.jpeg" width="400" height="400" />
-                <p>Name LastName</p>
-                <p>Description</p>
-                <p>Price</p>
-                <p>Rating</p>
+                <div class="tutorName"><p id="tutor_4_name"></p></div>
+                <div class="tutorDescription"><p id="tutor_4_description"></p></div>
+                <div class="tutorPrice"><p id="tutor_4_price"></p></div>
+                <div class="tutorRating"><p id="tutor_4_rating"></p></div>
             </div>
         </div>
+        <div class="clearfix"></div>
     </section>
 
     <section class="contactContainer" id="contactUs">
-
+        <h1>Contact Us</h1>
+        <form>
+            <input type="text" placeholder="First Name" name="firstname"><br>
+            <input type="text" placeholder="Last Name" name="lastname"><br>
+            <input type="text" placeholder="Phone Number" name="phonenumber"><br>
+            <input type="text" placeholder="E-mail" name="email"><br>
+            <textarea rows="10" placeholder="Message" name="message"></textarea><br>
+        </form>
+        <button type="submit" class="btn">Submit</button>
     </section>
+
+
+    <script type="text/javascript">
+
+        function getUrlParameter(){
+            var jsonData = '{ "tutors" : [{"first_name": "jacky", "last_name": "ma"}, {"first_name": "chen", "last_name": "ma"},    {"first_name": "taka", "last_name": "sd"},  {"first_name": "alain", "last_name": "ma"}]}'
+            var encodedJson  = btoa(jsonData);
+
+            var dummy_url = "http://www.yomama.com/tutor.html?" + encodedJson
+
+            // TODO: Replace dummy_url raw string assignment with window.location.href later
+
+            var decodeJson = atob(dummy_url.split('?')[1]);
+            var allTutors = JSON.parse(decodeJson.replace(/\\/g, ''));
+            return allTutors;
+        }
+
+        let tutorsInfo = getUrlParameter().tutors;
+
+        for (let i = 0; i < tutorsInfo.length; i++) {
+            let firstName = tutorsInfo[i].first_name;
+            let lastName = tutorsInfo[i].last_name;
+            let fullName = firstName + " " + lastName;
+            let fullNameDOM = `tutor_${i+1}_name`;
+            document.getElementById(fullNameDOM).innerHTML = fullName;
+
+            let descriptionDOM = `tutor_${i+1}_description`;
+            document.getElementById(descriptionDOM).innerHTML = "This is a description of the tutor.";
+
+            let priceDOM = `tutor_${i+1}_price`;
+            document.getElementById(priceDOM).innerHTML = "$15/h";
+
+            let ratingDOM = `tutor_${i+1}_rating`;
+            document.getElementById(ratingDOM).innerHTML = "5"
+        }
+
+    </script>
 </body>
 </html>
