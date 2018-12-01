@@ -10,15 +10,30 @@ using Microsoft.EntityFrameworkCore;
 
 namespace mlh.Controllers
 {
-    [Route("manager")]
+
     public class HomeController : Controller
     {
+
+
         //admin area
         db context = new db();
         [HttpGet,Route("getusers")]
         public async Task<object> getusers(){
             var users = await context.users.ToListAsync();
             return users;
+        }
+
+        [HttpGet, Route("gettutors")]
+        public async Task<object> gettutors()
+        {
+            var users = await context.users.Where(x=>x.services.Length>3).ToListAsync();
+            return users;
+        }
+
+        [HttpGet]
+        public ActionResult Index()
+        {
+            return Redirect("https://mlh-team-hahaha.azurewebsites.net/Tutor.html");
         }
 
         [HttpGet, Route("getcourses")]

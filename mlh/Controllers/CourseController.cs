@@ -35,6 +35,7 @@ namespace mlh.Controllers
             var list = await context.courses.ToListAsync();
             return list.Select(x => x.GetPreview());
         }
+
         [HttpPost,Route("gettutors")]
         public async Task<object> gettutors([FromBody]gettutors data){
             var course = await context.courses.FindAsync(data.courseid);

@@ -24,6 +24,7 @@
             var pass = document.getElementById('PassForm').value
             var data = JSON.stringify({"username": user, "password": pass});
             xhr.send(data);
+						window.location.replace(window.location.href.replace(/index/g, 'tutor'))
         }
     </script>
     <div class="container">

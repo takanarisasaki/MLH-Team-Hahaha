@@ -128,6 +128,7 @@ header {
     margin-bottom: 80px;
 }
 
+
 .tutorName {
     text-align: center;
     margin-top: 5px;
@@ -141,4 +142,53 @@ header {
 .tutorPrice {
     text-align: right;
     color: blue;
+}
+
+
+
+/* Section - Contact */
+
+.contactContainer {
+    background-color: black;
+    opacity: 0.93;
+    padding: 3%;
+    margin-top: 10%;
+    font-family: "Roboto", sans-serif;
+    text-align:center;
+}
+
+form {
+    box-sizing: border-box;
+    width: 100%;
+    margin: 10px;
+    color: white;
+}
+
+input, textarea {
+    font-family: "Roboto", sans-serif;
+    border-radius: 8px;
+    width: 40%;
+    padding: 18px;
+    margin: 15px;
+    border: none;
+    position: relative;
+    background-color: #1e1e1e;
+    font-size: 15px;
+    color: white;
+}
+
+
+.btn {
+    font-size: 25px;
+    position: relative;
+    background-color: #1e1e1e;
+    width: 10%;
+    color: white;
+    margin: 10px;
+    border: none;
+    border-radius: 4px;
+    padding: 10px;
+}
+.btn:hover{
+    background-color:dodgerblue;
 }
