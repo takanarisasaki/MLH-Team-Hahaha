@@ -122,11 +122,41 @@ header {
     align-content: center;
 }
 
+.tutorss:hover {
+    opacity: 0.25;
+}
+
+
 .tutor {
     display: inline-block;
     margin-left: 80px;
-    margin-bottom: 80px;
+    margin-bottom: 80px
 }
+
+.imageContainer {
+    position: relative;
+}
+
+
+.btn1 {
+    display: none;
+    font-size: 25px;
+    background-color: #1e1e1e;
+    color: white;
+    padding:7px;
+    border: none;
+    width: 30%;
+    border-radius: 4px;
+    top: 45%;
+    left: 35%;
+    position: absolute;
+}
+
+.tutorss:hover + .btn1, .btn1:hover {
+    display: inline-block;
+    cursor:pointer
+}
+
 
 /* Section - Contact */
 
@@ -175,6 +205,7 @@ input, textarea {
 }
 .btn:hover{
     background-color:dodgerblue;
+    cursor:pointer;
 }
 
 .clearfix {
