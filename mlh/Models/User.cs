@@ -60,7 +60,11 @@ namespace mlh.Models
             };
         }
         public void addservice(string courseid){
-
+            List<string> ser = new List<string>();
+            if (!string.IsNullOrEmpty(services))
+            {
+                ser = JsonConvert.DeserializeObject<List<string>>(services);
+            }
         }
 
         public void addtutor(string userid,string courseid){
