@@ -12,4 +12,10 @@
     <Compile Remove="Models\mlh.cs" />
     <Compile Remove="Controllers\ValuesController.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Remove="wwwroot\images\stars.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="wwwroot\images\stars.png" />
+  </ItemGroup>
 </Project>
