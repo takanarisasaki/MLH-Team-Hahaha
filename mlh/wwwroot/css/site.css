@@ -104,7 +104,8 @@ header {
 }
 
 
-/* Section - Title */
+/* Section - Tutors */
+
 .tutorContainer {
     margin-top: 50px;
     padding-top: 25px;
@@ -113,9 +114,6 @@ header {
 .tutorTitle {
     text-align: center;
 }
-
-
-/* Section - Tutors */
 
 .tutors {
     margin: 40px 70px;
@@ -157,9 +155,6 @@ header {
     cursor:pointer
 }
 
-
-/* Section - Contact */
-
 .tutorName {
     text-align: center;
     margin-top: 5px;
@@ -175,7 +170,9 @@ header {
     color: blue;
 }
 
-
+.starContainer {
+    text-align: center;
+}
 
 
 /* Section - Contact */
@@ -209,7 +206,6 @@ input, textarea {
     color: white;
 }
 
-
 .btn {
     font-size: 25px;
     position: relative;
@@ -221,6 +217,7 @@ input, textarea {
     border-radius: 4px;
     padding: 10px;
 }
+
 .btn:hover{
     background-color:dodgerblue;
     cursor:pointer;
