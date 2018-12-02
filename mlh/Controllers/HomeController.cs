@@ -36,7 +36,7 @@ namespace mlh.Controllers
                     description = x.description,
                     rating = x.rating,
                     price = x.price
-                })
+                }).ToList()
             };
         }
 
