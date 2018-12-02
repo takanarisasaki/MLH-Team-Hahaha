@@ -10,18 +10,15 @@
     <script type="text/javascript">
     
     function getUrlParameter(){
-			var jsonData = '{ "tutors" : [{"first_name": "jacky", "last_name": "ma"}, {"first_name": "chen", "last_name": "ma"},	{"first_name": "taka", "last_name": "sd"},	{"first_name": "alain", "last_name": "ma"}]}'
+				var jsonData = '{ "tutors" : [{"first_name": "jacky", "last_name": "ma"}, {"first_name": "chen", "last_name": "ma"},	{"first_name": "taka", "last_name": "sd"},	{"first_name": "alain", "last_name": "ma"}]}'
 				var encodedJson  = btoa(jsonData);
 
-        var dummy_url = "http://www.yomama.com/tutor.html?" + encodedJson
-       
+				var dummy_url = "http://www.yomama.com/tutor.html?" + encodedJson
 				// TODO: Replace dummy_url raw string assignment with window.location.href later
 				var decodeJson = atob(dummy_url.split('?')[1]);
 				var allTutors = JSON.parse(decodeJson.replace(/\\/g, ''));
         return allTutors;
     }
-
-		getUrlParameter()
 
     </script>
 
