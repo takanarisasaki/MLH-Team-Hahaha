@@ -102,7 +102,7 @@
             var jsonData = '{ "tutors" : [{"first_name": "jacky", "last_name": "ma"}, {"first_name": "chen", "last_name": "ma"},    {"first_name": "taka", "last_name": "sd"},  {"first_name": "alain", "last_name": "ma"}]}'
             var encodedJson  = btoa(jsonData);
 
-            var dummy_url = "http://www.yomama.com/tutor.html?" + encodedJson
+            var dummy_url = window.location.href
 
             // TODO: Replace dummy_url raw string assignment with window.location.href later
 
@@ -114,20 +114,19 @@
         let tutorsInfo = getUrlParameter().tutors;
 
         for (let i = 0; i < tutorsInfo.length; i++) {
-            let firstName = tutorsInfo[i].first_name;
-            let lastName = tutorsInfo[i].last_name;
+            let firstName = tutorsInfo[i].firstname;
+            let lastName = tutorsInfo[i].lastname;
             let fullName = firstName + " " + lastName;
             let fullNameDOM = `tutor_${i+1}_name`;
             document.getElementById(fullNameDOM).innerHTML = fullName;
 
+            let description = tutorsInfo[i].description;
             let descriptionDOM = `tutor_${i+1}_description`;
-            document.getElementById(descriptionDOM).innerHTML = "This is a description of the tutor.";
+            document.getElementById(descriptionDOM).innerHTML = description;
 
+            let price = tutorsInfo[i].price;
             let priceDOM = `tutor_${i+1}_price`;
-            document.getElementById(priceDOM).innerHTML = "$15/h";
-
-            let ratingDOM = `tutor_${i+1}_rating`;
-            document.getElementById(ratingDOM).innerHTML = "5"
+            document.getElementById(priceDOM).innerHTML = price;
         }
 
     </script>

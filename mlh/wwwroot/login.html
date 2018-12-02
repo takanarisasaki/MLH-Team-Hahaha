@@ -11,7 +11,8 @@
     <script type="text/javascript">
 				function redirect(json){
 					console.log(json)
-					var encodeJson = btoa(JSON.stringify(json))
+					var stringJson = JSON.stringify(json) 
+					var encodeJson = btoa(stringJson)
 					window.location.replace(window.location.href.replace(/login.html/, 'tutor.html?' + encodeJson))
 				}
 
