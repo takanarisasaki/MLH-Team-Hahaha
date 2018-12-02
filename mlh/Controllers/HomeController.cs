@@ -27,7 +27,17 @@ namespace mlh.Controllers
         public async Task<object> gettutors()
         {
             var users = await context.users.Where(x=>x.services.Length>3).ToListAsync();
-            return users;
+            return new
+            {
+                tutors = users.Select(x => new
+                {
+                    firstname = x.firstname,
+                    lastname = x.lastname,
+                    description = x.description,
+                    rating = x.rating,
+                    price = x.price
+                })
+            };
         }
 
         [HttpGet]
