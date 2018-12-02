@@ -35,7 +35,7 @@ namespace mlh.Controllers
                 lastname = "Zhang",
                 price = "30.99$/hr",
                 rating = "3",
-                description = "I graduated top of my class at Beijing. I'm a skilled expert at Mathematics",
+                description = "I graduated top of my class at Beijing.",
                 phone = "514539219",
                 email = "joe@gmail.com"
             });
@@ -48,7 +48,7 @@ namespace mlh.Controllers
                 lastname = "Lu",
                 price = "41.99$/hr",
                 rating = "5",
-                description = "I teach anything extremely wellwell.",
+                description = "I teach anything extremely well.",
                 phone = "514471209",
                 email = "jfjewo@gmail.com"
             });
